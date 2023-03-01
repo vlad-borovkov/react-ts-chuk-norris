@@ -31,6 +31,7 @@ function Main() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showJokes]);
 
+  // можно добавить проверку на лайк пустой шутки до момента получения с API, но времени уже не было
   const handleSaveJoke = () => {
     setAddJoke(!addJoke);
     const chukJokesLocalArr = JSON.parse(localStorage.getItem('chuckJokes'));
