@@ -8,7 +8,7 @@ function FavList() {
     JSON.parse(localStorage.getItem('chuckJokes')) || []
   );
 
-  const handleDeleteJoke = (jokeId) => {
+  const handleDeleteJoke = (jokeId: string) => {
     const filteredArr = jokesLocalArr.filter((item) => item.id !== jokeId);
     setJokesLocalArr(filteredArr);
     localStorage.setItem('chuckJokes', JSON.stringify(filteredArr));

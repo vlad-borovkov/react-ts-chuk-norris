@@ -6,6 +6,12 @@ import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { fetchJokes } from '../../store/reducers/ActionCreators';
 import { useHistory } from 'react-router-dom';
 
+/* 
+ можно добавить проверку на лайк пустой шутки до момента получения с API, 
+ но времени уже не было, добиться синхронности сменяемости фразы и стейта кнопки лайка-дизлайка, 
+ зарефакторить функцию добавления фразы и избавиться от вложенных условий, 
+ стили ну и прочоие игры со шрифтами*/
+
 function Main() {
   const history = useHistory();
   const dispath = useAppDispatch();
@@ -31,7 +37,6 @@ function Main() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showJokes]);
 
-  // можно добавить проверку на лайк пустой шутки до момента получения с API, но времени уже не было
   const handleSaveJoke = () => {
     setAddJoke(!addJoke);
     const chukJokesLocalArr = JSON.parse(localStorage.getItem('chuckJokes'));
@@ -39,6 +44,7 @@ function Main() {
     if (chukJokesLocalArr === null) {
       localStorage.setItem('chuckJokes', JSON.stringify([jokes]));
     } else if (chukJokesLocalArr.length === 10) {
+      // если в массиве уже есть эта шутка..
       if (chukJokesLocalArr.some((item) => item.id === jokes.id)) {
         const filteredArr = chukJokesLocalArr.filter(
           (item) => item.id !== jokes.id

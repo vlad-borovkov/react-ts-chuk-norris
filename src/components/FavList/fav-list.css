@@ -19,7 +19,7 @@
         padding: 0;
         display: grid;
         justify-content: center;
-        grid-template-columns: repeat(2, 360px);
+        grid-template-columns: repeat(2, auto);
         row-gap: 10px;
         column-gap: 15px;
     }

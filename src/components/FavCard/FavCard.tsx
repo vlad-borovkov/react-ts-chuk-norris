@@ -1,8 +1,14 @@
 import React from 'react';
 import { ButtonDelete } from './favCardStyleComp';
 import './fav-card.css';
+import { IChuckNorrisJoke } from '../../types/Jokes';
 
-function FavCard(props) {
+interface IFavCard {
+  jokesItem: IChuckNorrisJoke;
+  handleDeleteJoke: any;
+}
+
+function FavCard(props: IFavCard) {
   const { jokesItem, handleDeleteJoke } = props;
 
   return (
