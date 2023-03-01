@@ -1,0 +1,39 @@
+.fav-card {
+    list-style: none;
+    width: 600px;
+    height: 100px;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: antiquewhite;
+    overflow: hidden;
+}
+
+.fav-card__quote {
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+}
+
+.fav-card__btn-wrap {
+    position: relative;
+    justify-self: flex-end
+}
+
+@media screen and (max-width: 769px) {
+    .fav-card {
+        list-style: none;
+        width: 350px;
+        height: 100px;
+        border-radius: 10px;
+        margin: 10px;
+        display: flex;
+        flex-direction: row;
+        background-color: antiquewhite;
+
+    }
+}
