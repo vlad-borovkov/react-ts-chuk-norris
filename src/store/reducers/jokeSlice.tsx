@@ -21,13 +21,10 @@ const initialState: IJokesState = {
   error: '',
 };
 
-// создали слайс - обёртка над редьюсором, который упрощает взаимодейтсвие. оттуда можно достать нужный нам редьюсор, в данном случае user
-// также можно достать экшнкреетор, ведь слайс уже содержит в себе actionCreator. экспортируем для использования
 export const jokeSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    // редюсор для асинхронных запросов
     jokeFetching(state) {
       state.isLoading = true;
     },
@@ -37,13 +34,10 @@ export const jokeSlice = createSlice({
       state.jokes = action.payload;
     },
     jokeFetchingError(state, action: PayloadAction<string>) {
-      //хардкодим стейт внутри редьюссора
       state.isLoading = false;
-      //ссылаемся на получаемый текст ошибки
       state.error = action.payload;
     },
   },
 });
 
-//достали редьюсор user из слайса и передаём во внешнюю среду для взаимодействия: в store.ts где лежит рутовый редьюсор
 export default jokeSlice.reducer;

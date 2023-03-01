@@ -9,8 +9,6 @@
 
 }
 
-.favlist__item {}
-
 @media screen and (max-width: 769px) {
     .favlist {
         margin: 0;

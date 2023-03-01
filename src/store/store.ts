@@ -1,6 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { configureStore } from '@reduxjs/toolkit';
-//приняли редьюсор из слайса и передали в комбайн
 import jokeReducer from './reducers/jokeSlice';
 
 
